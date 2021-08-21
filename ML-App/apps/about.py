@@ -1,6 +1,6 @@
-from numpy.lib.function_base import percentile
+# About page (links to repo and notebook)
+
 import streamlit as st
-import time
 
 def app():
     st.title('About')
