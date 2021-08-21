@@ -6,7 +6,7 @@ from joblib import load
 def app():
     
     st.title('Website Analysis')
-    st.write("Use our trained Artificial Intelligence models to analyze your E-Commerce `website` and inspect its performance based on certain measurements")
+    st.write("Use our trained Artificial Intelligence models to analyze your E-Commerce `website` and inspect its performance")
 
     section = st.radio('Sections',('Visualize the Data', 'Load the AI (R.ForestRegressor)'))
     if section == 'Visualize the Data':

@@ -9,8 +9,8 @@ app = MultiApp()
 st.set_page_config(page_title="CoreX ML App", page_icon="💲", layout='centered', initial_sidebar_state="collapsed")
 
 st.markdown("""
-# CoreX Machine Learning App
-This app allows users to get recommendations and useful metrics regarding the performence and future of their E-Commerce business
+# CoreX Information App
+This app allows users to get recommendations and obtain useful metrics for their E-Commerce business through AI and Data Science
 """)
 
 # Add all your application here
