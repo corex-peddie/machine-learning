@@ -5,17 +5,17 @@ from joblib import load
 
 def app():
     
-    st.title('Website Analysis')
-    st.write("Use our custom-built Machine Learning models to analyze your E-Commerce `website` and inspect its performance")
+    st.title('SEO Analysis')
+    st.write("Use our custom-built Machine Learning models to analyze your `E-Commerce website` and inspect its performance")
 
     section = st.radio('Sections',('View your Data', 'Use the ML Model (R.ForestRegressor)'))
     if section == 'View your Data':
         data = pd.read_csv('ML-App/Data/visitors.csv')
         data_avg = pd.read_csv('ML-App/Data/visitors_mean.csv')
         data = data.drop(columns='Unnamed: 0')
-        fig1 = px.line(data,x='Date', y=['Total Visits' ,'Unique Visits' ,'First Time Visits' ,'Returning Visits'], labels={'value': 'Visits', 'variable': 'Legend', 'Date': 'Time (Increasing)'}, title='Visits over Time').update_xaxes(showticklabels=False)
+        fig1 = px.line(data,x='Date', y=['Total Visits' ,'Unique Visits' ,'First Time Visits' ,'Returning Visits'], labels={'value': 'Visits', 'variable': 'Legend', 'Date': 'Time (Increasing)'}, title='E-Commerce Website Visits over Time').update_xaxes(showticklabels=False)
         st.plotly_chart(fig1)
-        fig2 = px.bar(data_avg, barmode='group', x='Day',  y=['Total Visits' ,'Unique Visits' ,'First Time Visits' ,'Returning Visits'], title='Average Visits per Day', labels={'value': 'Visits', 'variable': 'Legend'})
+        fig2 = px.bar(data_avg, barmode='group', x='Day',  y=['Total Visits' ,'Unique Visits' ,'First Time Visits' ,'Returning Visits'], title='Average Website Visits per Week', labels={'value': 'Visits', 'variable': 'Legend'})
         st.plotly_chart(fig2)
     else:
         lr = load('ML-App/Data/rf_visitors.joblib')
@@ -29,7 +29,7 @@ def app():
             return_users = st.number_input('Returning Website Users', 250)
         if st.button('Forecast New Measurements'):
             pred = lr.predict([[unique_visits, total_visits]])[0]
-            st.write('### AI Prediction')
+            st.write("### AI's Prediction")
             st.write('New Users (next week):', int(pred[0]))
             st.write('Returning Users (next week):', int(pred[1]))
 
