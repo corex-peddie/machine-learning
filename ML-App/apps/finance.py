@@ -15,6 +15,7 @@ def app():
     if section == 'View your Data':
         fig1 = px.line(data, x='Month Name', y=['Total Sales/Revenue', 'Expenses', 'Profit'], title='Your Data Summary', labels={'value': 'Money In/Out', 'Month Name': 'Month', 'variable': 'Legend'})
         st.plotly_chart(fig1)
+        st.write(data)
     else:
         st.write('### Forecast Profits')
         forecast_profit = load('ML-App/Data/profit_forecast.joblib')
