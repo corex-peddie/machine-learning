@@ -8,7 +8,7 @@ def app():
     st.title('Website Analysis')
     st.write("Use our trained Artificial Intelligence models to analyze your E-Commerce `website` and inspect its performance")
 
-    section = st.radio('Sections',('Visualize the Data', 'Load the AI (R.ForestRegressor)'))
+    section = st.radio('Sections',('Visualize the Data', 'Use the AI (R.ForestRegressor)'))
     if section == 'Visualize the Data':
         data = pd.read_csv('ML-App/Data/visitors.csv')
         data_avg = pd.read_csv('ML-App/Data/visitors_mean.csv')
