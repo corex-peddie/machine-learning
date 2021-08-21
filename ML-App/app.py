@@ -6,8 +6,10 @@ from apps import home, finance, web
 
 app = MultiApp()
 
+st.set_page_config(page_title="CoreX ML App", page_icon="💲", layout='centered', initial_sidebar_state="collapsed")
+
 st.markdown("""
-# Corex Machine Learning App
+# CoreX Machine Learning App
 This prototype app allows users to get recommendations and useful metrics regarding the performence and future of their E-Commerce business
 """)
 
