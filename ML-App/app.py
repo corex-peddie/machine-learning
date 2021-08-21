@@ -15,7 +15,7 @@ This app allows users to get recommendations and obtain useful metrics for their
 
 # Add all your application here
 app.add_app("Financial Analysis", finance.app)
-app.add_app("SEO Analysis", web.app)
+app.add_app("SEO/Web User Analysis", web.app)
 app.add_app('About', about.app)
 # The main app
 app.run()
