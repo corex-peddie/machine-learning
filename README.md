@@ -5,4 +5,4 @@
 - **Model-Testing**
   - Contains scripts used to test ML models
 - **ML-App**
-  - Contains source code for the CoreX Analysis App
+  - Contains source code for the [CoreX Analysis App](https://share.streamlit.io/corex-peddie/machine-learning/ML-App/app.py)
