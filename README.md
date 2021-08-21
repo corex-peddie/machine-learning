@@ -1,5 +1,5 @@
 # Machine Learning Developments for CoreX
-**Folders**
+*Folders*
 - **Data-Notebooks** 
   - Contains the Jupyter notebooks used for data analysis and building ML models
 - **Model-Testing**
