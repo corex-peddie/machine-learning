@@ -6,10 +6,10 @@ from joblib import load
 def app():
     
     st.title('Website Analysis')
-    st.write("Use our trained Artificial Intelligence models to analyze your E-Commerce `website`")
+    st.write("Use our trained Artificial Intelligence models to analyze your E-Commerce `website` and inspect its performance based on certain measurements")
 
-    section = st.radio('Select',('Visualize Data', 'Load the AI'))
-    if section == 'Visualize Data':
+    section = st.radio('Sections',('Visualize the Data', 'Load the AI'))
+    if section == 'Visualize the Data':
         data = pd.read_csv('ML-App/Data/visitors.csv')
         data_avg = pd.read_csv('ML-App/Data/visitors_mean.csv')
         data = data.drop(columns='Unnamed: 0')
@@ -18,8 +18,21 @@ def app():
         fig2 = px.bar(data_avg, barmode='group', x='Day',  y=['Total Visits' ,'Unique Visits' ,'First Time Visits' ,'Returning Visits'], title='Average Visits per Day', labels={'value': 'Visits', 'variable': 'Legend'})
         st.plotly_chart(fig2)
     else:
-        lr = load('ML-App/Data/lr_visitors.joblib')
-        st.write('Model:', lr)
+        lr = load('ML-App/Data/rf_visitors.joblib')
+        st.caption("This Week's Data (Google Analytics):")
+        col1, col2 = st.beta_columns([1,1])
+        with col1:
+            total_visits = st.number_input('Total Website Visits', 710)
+            unique_visits = st.number_input('Unique Website Visits', 500)
+        with col2:
+            new_users = st.number_input('New Website Users', 454)
+            return_users = st.number_input('Returning Website Users', 250)
+        if st.button('Forecast New Measurements'):
+            pred = lr.predict([[unique_visits, total_visits]])[0]
+            st.write('AI Prediction', pred)
+
+
+
 
 
 
