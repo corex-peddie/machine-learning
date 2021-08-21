@@ -22,7 +22,7 @@ def app():
         info = info.rename(columns={'Month Name': 'Month'})
         st.write(info)
     else:
-        st.write('### Predict Future Profits and Expenses')
+        st.write('### Predict Future Revenue and Profits')
         forecast_profit = load('ML-App/Data/profit_forecast.joblib')
         forecast_expenses = load('ML-App/Data/expenses_forecasting.joblib')
         months = st.selectbox('Select a Future Month', ['Sept 2021', 'Oct 2021', 'Nov 2021', 'Dec 2021', 'Jan 2022', 'Feb 2022', 
