@@ -10,7 +10,7 @@ st.set_page_config(page_title="CoreX ML App", page_icon="💲", layout='centered
 
 st.markdown("""
 # CoreX Machine Learning App
-This prototype app allows users to get recommendations and useful metrics regarding the performence and future of their E-Commerce business
+This app allows users to get recommendations and useful metrics regarding the performence and future of their E-Commerce business
 """)
 
 # Add all your application here
