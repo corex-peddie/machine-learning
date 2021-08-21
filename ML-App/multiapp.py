@@ -1,4 +1,4 @@
-"""Frameworks for running multiple Streamlit applications as a single app.
+"""Framework for running multiple Streamlit applications as a single app.
 """
 import streamlit as st
 
