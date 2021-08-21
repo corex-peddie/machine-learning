@@ -9,7 +9,7 @@ import time
 def app():
     st.title('Financial Analysis')
 
-    st.write("Use our custom-built Machine Learning model and external algorithms to analyze the `financial performance` of your E-Commerce business ")
+    st.write("Use our custom-built Machine Learning models and external algorithms to analyze the `financial performance` of your E-Commerce business ")
 
     data = pd.read_csv('ML-App/Data/finance.csv')
     data = data.drop(columns='Unnamed: 0')
