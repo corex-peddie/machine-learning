@@ -15,7 +15,7 @@ This app allows users to get recommendations and useful metrics regarding the pe
 
 # Add all your application here
 app.add_app("Website Analysis", web.app)
-app.add_app("Home", home.app)
 app.add_app("Financial Ratings", finance.app)
+app.add_app("About", home.app)
 # The main app
 app.run()
