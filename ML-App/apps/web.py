@@ -8,7 +8,7 @@ def app():
     st.title('Website Analysis')
     st.write("Use our trained Artificial Intelligence models to analyze your E-Commerce `website` and inspect its performance based on certain measurements")
 
-    section = st.radio('Sections',('Visualize the Data', 'Load the AI'))
+    section = st.radio('Sections',('Visualize the Data', 'Load the AI (R.ForestRegressor)'))
     if section == 'Visualize the Data':
         data = pd.read_csv('ML-App/Data/visitors.csv')
         data_avg = pd.read_csv('ML-App/Data/visitors_mean.csv')
@@ -19,7 +19,7 @@ def app():
         st.plotly_chart(fig2)
     else:
         lr = load('ML-App/Data/rf_visitors.joblib')
-        st.caption("This Week's Data (Google Analytics):")
+        st.caption("This Week's Data:")
         col1, col2 = st.beta_columns([1,1])
         with col1:
             total_visits = st.number_input('Total Website Visits', 710)
@@ -29,9 +29,9 @@ def app():
             return_users = st.number_input('Returning Website Users', 250)
         if st.button('Forecast New Measurements'):
             pred = lr.predict([[unique_visits, total_visits]])[0]
-            st.write('AI Prediction', pred)
-
-
+            st.write('### AI Prediction')
+            st.write('New Users (next week):', int(pred[0]))
+            st.write('Returning Users (next week):', int(pred[1]))
 
 
 
