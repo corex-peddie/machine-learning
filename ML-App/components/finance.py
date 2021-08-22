@@ -20,7 +20,6 @@ def app():
         st.plotly_chart(fig1)
         info = data[['Month Name', 'Month Number', 'Total Sales/Revenue', 'Expenses', 'Profit']]
         info = info.rename(columns={'Month Name': 'Month'})
-        st.write(info)
     else:
         st.write('### Predict Future Revenue and Profits')
         forecast_profit = load('ML-App/Data/profit_forecast.joblib')
