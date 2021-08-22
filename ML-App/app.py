@@ -1,3 +1,5 @@
+# Main app page (sets up navigation and routing)
+
 import streamlit as st
 from multiapp import MultiApp
 from components import finance, web, about

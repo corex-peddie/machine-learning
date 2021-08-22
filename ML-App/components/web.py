@@ -1,4 +1,4 @@
-# SEO/Web-User Analysis
+# SEO/Web-User Analysis (Random Forest Regressor Model)
 
 import streamlit as st
 import pandas as pd

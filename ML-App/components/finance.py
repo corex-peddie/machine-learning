@@ -1,4 +1,4 @@
-# Financial Analysis
+# Financial Analysis (2 Linear Regression Models)
 
 import streamlit as st
 import pandas as pd
