@@ -1,6 +1,6 @@
 import streamlit as st
 from multiapp import MultiApp
-from apps import finance, web, about
+from components import finance, web, about
 
 # Set up MultiApp feature (allows for multiple pages)
 app = MultiApp()
